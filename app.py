@@ -21,7 +21,7 @@ class MovieViews(Resource):
             query = query.filter(Movie.director_id == director_id)
 
         if genre_id := request.args.get('genre_id'):
-            query = query.filter(Movie.director_id == genre_id)
+            query = query.filter(Movie.genre_id == genre_id)
 
 
         return movies_schemas.dump(query)
